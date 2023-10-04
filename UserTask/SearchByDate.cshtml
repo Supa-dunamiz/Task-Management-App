@@ -1,0 +1,13 @@
+﻿@model DateTime
+@{
+	ViewData["Title"] = "Search for task by date";
+}
+
+<h4>Search for task by date</h4>
+<form asp-action="TaskByDate" method="get">
+	<div class="form-group">
+		<label for="date">Select Date</label>
+		<input type="date" id="date" name="date" class="form-control" required>
+	</div>
+	<button type="submit" class="btn btn-outline-secondary">Search</button>
+</form>

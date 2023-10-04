@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<main role="main">
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Welcome</h1>
+                <p class="lead text-muted">
+                    <b>TaskApp, Your Ultimate Task Management Solution!</b>
+                    
+                    With TaskApp, you have a user-friendly, feature-rich task management tool that empowers 
+                    you to take control of your tasks and achieve your goals with ease. From creating to-do lists and 
+                    setting priorities to collaborating with team members, 
+                    we've got you covered.
+
+                </p>
+                <p>
+                    <a class="btn btn-primary my-2" asp-area="" asp-controller="UserTask" asp-action="Create">Create New Task</a>
+                    <a class="btn btn-secondary my-2" asp-area="" asp-controller="UserTask" asp-action="CurrentTask">See Task for Today</a>
+                </p>
+            </div>
+        </section>
+    }
+    else
+    {
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Tasks App</h1>
+                <p class="lead text-muted">
+                    Are you tired of juggling multiple to-do lists, sticky notes, 
+                    and countless reminders? Do you wish there was a simple and efficient way to stay organized 
+                    and boost your productivity? Look no further! TaskMaster is here to revolutionize 
+                    the way you manage your tasks and projects.
+                </p>
+                <p>
+                    <a class="btn btn-primary my-2" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                    <a class="btn btn-secondary my-2" asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+                </p>
+            </div>
+        </section>
+    }
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Organized</h2>
+                <p>
+                    In today's fast-paced world, staying organized and on top of your to-do list is essential. 
+                    Whether you're a busy professional juggling multiple projects, a student managing assignments 
+                    and deadlines, or simply someone looking to boost your productivity, 
+                    TaskApp is here to streamline your life.
+                </p>
+               
+            </div>
+            <div class="col-md-4">
+                <h2>Effectives</h2>
+                <p>
+                    With TaskApp, you can create, organize, and track your tasks effortlessly and effectively.
+                    Whether you're a busy professional, a student with a hectic schedule, or a parent juggling multiple responsibilities,
+                    our app is your go-to solution for staying on top of your game.
+                </p>
+                
+                
+            </div>
+            <div class="col-md-4">
+                <h2>Prioritize</h2>
+                <p>
+                    Our task app is designed with one goal in mind: to help you take control of your day, 
+                    prioritize your tasks, and accomplish more than ever before. Say goodbye to the chaos of 
+                    scattered notes and missed deadlines, and say hello to a streamlined, stress-free way of
+                    managing your tasks.
+                </p>
+                
+                
+            </div>
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>

@@ -1,0 +1,28 @@
+﻿@model UserTask
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-fluid" src="https://thumbs.dreamstime.com/z/word-task-wooden-block-black-notebook-smartpone-credit-card-magnifier-word-task-wooden-block-black-280527172.jpg?w=992" width="80%" height="150" alt="Image">
+            </div>
+            <div class="col-md-4">
+                <h3 class="my-3">@Model.Title</h3>
+                <p>@Model.Description</p>
+                <h3 class="my-3">Task Details</h3>
+                <ul>
+                    <li>Date: <b>@Model.DateOfTask.Value.Day/@Model.DateOfTask.Value.Month/@Model.DateOfTask.Value.Year</b></li>
+                    <li>Priority: <b>@Model.TaskPriority</b></li>
+                    <li>Status: <b>@Model.TaskUpdate</b></li>
+                </ul>
+                <div>
+                    <a asp-action="Edit" asp-controller="UserTask" asp-area="" asp-route-id="@Model.Id" type="button" class="btn btn-secondary">Edit Task</a>
+                </div>
+                <div style="padding-top:20px; padding-bottom:20px">
+                    <a asp-action="EditStatus" asp-controller="UserTask" asp-area="" asp-route-id="@Model.Id" type="button" class="btn btn-warning">Change Task Status</a>
+                </div>
+                <div>
+                    <a asp-action="Delete" asp-controller="UserTask" asp-area="" asp-route-id="@Model.Id" type="button" class="btn btn-danger">Delete Task</a>
+                </div>
+            </div>

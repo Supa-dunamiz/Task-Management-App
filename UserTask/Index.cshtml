@@ -1,0 +1,29 @@
+﻿@model IEnumerable<UserTask>
+
+<h2>All Tasks</h2>
+<div class="table-responsive">
+   <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date of Task</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+     @foreach(var item in Model)
+     {
+         <tbody>
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.DateOfTask.Value.Day/@item.DateOfTask.Value.Month/@item.DateOfTask.Value.Year</td>
+                    <td>@item.TaskPriority</td>
+                    <td>@item.TaskUpdate</td>
+                    <td><a asp-action="Detail" asp-controller="UserTask" asp-route-id="@item.Id" asp-area="" type="button" class="btn btn-success">View Task</a></td>
+                </tr>
+         </tbody>
+     }
+   </table>
+<div/>

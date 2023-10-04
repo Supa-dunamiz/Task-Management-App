@@ -1,0 +1,29 @@
+﻿﻿@using TaskApp.ViewModels
+@model UserDetailViewModel
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-fluid" src="@Model.ProfileImageUrl" width="50%" height="50" alt="Image">
+            </div>
+            <div class="col-md-4">
+                <h3 class="my-3">@Model.UserName</h3>
+                <p>@Model.EmailAddress</p>
+                <h3 class="my-3">User Details</h3>
+                <ul>
+                    <li>First Name: <b>@Model.FirstName</b></li>
+                    <li>Last Name: <b>@Model.LastName</b></li>
+                    <li>Location: <b>@Model.State, @Model.Country</b></li>
+                </ul>
+                <div>
+                    <a type="button" class="btn btn-primary" asp-area="" asp-controller="Dashboard" asp-action="EditUserProfile">Edit User Profile</a>
+                </div>
+                <div style="padding-top:20px; padding-bottom:20px">
+                    <a class="btn btn-success" asp-route-id="AppUserId" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                </div>
+                <div>
+                    <a asp-action="CurrentTask" asp-area="" asp-controller="UserTask" type="button" class="btn btn-warning" style="margin-right:100">Tasks for the day</a>
+                </div>
+            </div>
